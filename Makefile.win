@@ -9,7 +9,7 @@ OBJS= src\$T.obj
 
 lib: src\lfs.dll
 
-.c.obj:
+$(OBJS):
 	$(CC) /c /Fo$@ $(CFLAGS) $<
 
 src\lfs.dll: $(OBJS)
