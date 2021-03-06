@@ -89,6 +89,10 @@
 #define strerror(_)     "System unable to describe the error"
 #endif
 
+#ifndef UNUSED
+#define UNUSED(x) (void)(x)
+#endif
+
 #define DIR_METATABLE "directory metatable"
 typedef struct dir_data {
         int  closed;
@@ -851,6 +855,7 @@ static int file_info (lua_State *L) {
 */
 static int push_link_target(lua_State *L) {
 #ifdef _WIN32
+		UNUSED(L);
         errno = ENOSYS;
         return 0;
 #else
